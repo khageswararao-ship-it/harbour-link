@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Operations & Passenger Dashboard | Harbour Link</title>
+  <meta name="description" content="Real-time Toronto Island ferry operations dashboard. Live vessel radar, passenger volume analytics, terminal capacity, and marine weather telemetry.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span>Harbour Command Live:</span>
+      </div>
+      <span>All 5 passenger ferries operating normally. Automated radar sweep active.</span>
+      <span class="status-badge">System Status: Optimal</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill active">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Main Workspace -->
+  <main class="dashboard-wrapper">
+    <div class="container">
+      
+      <!-- Dashboard Header Bar -->
+      <div class="dashboard-header-bar">
+        <div class="dash-title-group">
+          <h1>
+            <span>🛰️</span>
+            <span>Harbour Operations & Passenger Radar</span>
+          </h1>
+          <p style="color: #94a3b8; font-size: 0.94rem; margin-top: 0.2rem;">
+            Real-time fleet telemetry, terminal capacity analytics, and marine meteorological monitoring.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+          <div class="dash-telemetry-badge">
+            <span class="pulse-dot"></span>
+            <span>RADAR TELEMETRY ONLINE</span>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); padding: 0.4rem 1rem; border-radius: var(--radius-sm); font-size: 0.88rem; font-family: monospace;">
+            🕒 <span id="dash-live-time">12:00:00 PM EST</span>
+          </div>
+
+          <button type="button" class="btn btn-secondary" id="btn-refresh-dash" style="padding: 0.45rem 1.1rem; font-size: 0.85rem; background: rgba(0, 210, 255, 0.15); color: #00d2ff; border-color: rgba(0, 210, 255, 0.4);">
+            🔄 Sync Telemetry
+          </button>
+        </div>
+      </div>
+
+      <!-- Marine Environmental Ticker -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+        <div style="background: rgba(19, 30, 60, 0.6); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.8rem;">
+          <span style="font-size: 1.6rem;">🌡️</span>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Air Temperature</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #fff;">22.4°C (Clear)</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(19, 30, 60, 0.6); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.8rem;">
+          <span style="font-size: 1.6rem;">🌊</span>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Lake Ontario Water</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #00d2ff;">18.5°C • Waves 0.2m</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(19, 30, 60, 0.6); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.8rem;">
+          <span style="font-size: 1.6rem;">💨</span>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Wind Speed & Heading</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #ffb703;">11 Knots NW</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(19, 30, 60, 0.6); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.8rem;">
+          <span style="font-size: 1.6rem;">👁️</span>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Harbour Visibility</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #00ffaa;">10.0+ km (Unrestricted)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Vibrant KPI Metric Cards -->
+      <div class="dash-kpi-grid">
+        
+        <!-- KPI 1 -->
+        <div class="dash-kpi-card" style="border-top: 3px solid #00d2ff;">
+          <div class="kpi-icon-wrap kpi-icon-cyan">🚢</div>
+          <div class="kpi-value" id="kpi-vessels">5 / 5</div>
+          <div class="kpi-label">Active Vessels In Service</div>
+          <div class="kpi-trend trend-up">
+            <span>●</span> 99.4% On-Time Performance Today
+          </div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="dash-kpi-card" style="border-top: 3px solid #ff5e62;">
+          <div class="kpi-icon-wrap kpi-icon-coral">👥</div>
+          <div class="kpi-value" id="kpi-passengers">16,420</div>
+          <div class="kpi-label">Daily Crossings Handled</div>
+          <div class="kpi-trend trend-up">
+            <span>▲</span> +18.2% vs. Previous Weekend
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="dash-kpi-card" style="border-top: 3px solid #ffb703;">
+          <div class="kpi-icon-wrap kpi-icon-gold">🏢</div>
+          <div class="kpi-value" id="kpi-capacity">64%</div>
+          <div class="kpi-label">Jack Layton Terminal Load</div>
+          <div class="kpi-trend trend-alert">
+            <span>⏱️</span> Avg Turnstile Wait: ~4 mins
+          </div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="dash-kpi-card" style="border-top: 3px solid #10b981;">
+          <div class="kpi-icon-wrap kpi-icon-emerald">🚲</div>
+          <div class="kpi-value" id="kpi-bikes">348</div>
+          <div class="kpi-label">Island Bikes & Quads Active</div>
+          <div class="kpi-trend trend-up">
+            <span>●</span> 94 Available at Centre Island
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Central Visual Operations Grid -->
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+        
+        <!-- Left: Live Simulated Radar Screen -->
+        <div class="radar-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: #fff;">
+                Active Harbour Radar Map
+              </h3>
+              <p style="font-size: 0.8rem; color: #94a3b8;">Click any vessel blip to inspect live navigational telemetry.</p>
+            </div>
+            <span style="font-size: 0.75rem; color: #00d2ff; background: rgba(0, 210, 255, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-family: monospace;">
+              LAT 43.64° N • LON 79.38° W
+            </span>
+          </div>
+
+          <!-- Radar Map Surface -->
+          <div class="radar-map-svg" id="radar-screen">
+            <div class="radar-sweep-line"></div>
+
+            <!-- Mainland Dock Marker -->
+            <div style="position: absolute; top: 18%; left: 50%; transform: translate(-50%, -50%); background: #2563eb; color: #fff; padding: 0.2rem 0.7rem; border-radius: 4px; font-size: 0.72rem; font-weight: 800; z-index: 5; border: 1px solid #60a5fa;">
+              ⚓ JACK LAYTON DOWNTOWN TERMINAL
+            </div>
+
+            <!-- Island Dock Markers -->
+            <div style="position: absolute; bottom: 15%; left: 20%; transform: translate(-50%, -50%); background: #0f766e; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; z-index: 5;">
+              🏝️ HANLAN'S POINT
+            </div>
+
+            <div style="position: absolute; bottom: 15%; left: 50%; transform: translate(-50%, -50%); background: #0f766e; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; z-index: 5;">
+              🏝️ CENTRE ISLAND DOCK
+            </div>
+
+            <div style="position: absolute; bottom: 15%; left: 80%; transform: translate(-50%, -50%); background: #0f766e; color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; z-index: 5;">
+              🏝️ WARD'S ISLAND DOCK
+            </div>
+
+            <!-- Animated Vessel Blips -->
+            <div class="vessel-blip" id="vessel-trillium" data-name="P.S. Trillium (Mid-Crossing)" style="top: 48%; left: 47%;" onclick="showVesselDetails('P.S. Trillium', 'Centre Island Crossing', '9.4 Knots', '620 / 800 Passengers', 'Captain M. Henderson')"></div>
+
+            <div class="vessel-blip" id="vessel-rennie" data-name="Thomas Rennie (Jack Layton)" style="top: 25%; left: 52%;" onclick="showVesselDetails('Thomas Rennie', 'Boarding at Gate 2', '0.0 Knots (Docked)', '780 / 1000 Passengers', 'Captain D. Vance')"></div>
+
+            <div class="vessel-blip" id="vessel-mcbride" data-name="Sam McBride (Returning)" style="top: 55%; left: 74%;" onclick="showVesselDetails('Sam McBride', 'Returning to Jack Layton', '10.2 Knots', '430 / 1000 Passengers', 'Captain S. Lee')"></div>
+
+            <div class="vessel-blip" id="vessel-inglis" data-name="William Inglis (Hanlan Route)" style="top: 42%; left: 28%;" onclick="showVesselDetails('William Inglis', 'En Route to Hanlans', '8.9 Knots', '310 / 900 Passengers', 'Captain R. Gomez')"></div>
+          </div>
+
+          <!-- Vessel Telemetry Pop-out -->
+          <div id="vessel-telemetry-box" style="margin-top: 1.25rem; background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--vivid-cyan); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Selected Vessel Details</div>
+              <div style="font-weight: 800; font-size: 1.1rem; color: #fff;" id="tel-vessel-name">P.S. Trillium (Historic Steam Flagship)</div>
+              <div style="font-size: 0.85rem; color: #00d2ff;" id="tel-vessel-status">Status: Centre Island Crossing • Speed: 9.4 Knots</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.75rem; color: #94a3b8;">Onboard Load</div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #00ffaa;" id="tel-vessel-passengers">620 / 800 Capacity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Hourly Passenger Traffic Graph -->
+        <div style="background: var(--grad-dark-card); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: #fff;">
+                Hourly Passenger Volume
+              </h3>
+              <span style="font-size: 0.75rem; background: rgba(255, 94, 98, 0.15); color: #ff5e62; padding: 0.2rem 0.6rem; border-radius: var(--radius-pill); font-weight: 700;">
+                Peak Surge
+              </span>
+            </div>
+            <p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 1.5rem;">
+              Total hourly boardings across all 4 terminal gates from early morning to evening.
+            </p>
+
+            <!-- CSS Bar Chart -->
+            <div class="chart-container">
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 25%;" title="08:00 AM - 640"></div>
+                <span class="chart-bar-label">8 AM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 48%;" title="10:00 AM - 1,420"></div>
+                <span class="chart-bar-label">10 AM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 90%; background: var(--grad-sunset);" title="12:00 PM - 2,890"></div>
+                <span class="chart-bar-label">12 PM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 100%; background: var(--grad-sunset);" title="02:00 PM - 3,150"></div>
+                <span class="chart-bar-label">2 PM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 75%;" title="04:00 PM - 2,410"></div>
+                <span class="chart-bar-label">4 PM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 60%;" title="06:00 PM - 1,980"></div>
+                <span class="chart-bar-label">6 PM</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 35%;" title="08:00 PM - 1,120"></div>
+                <span class="chart-bar-label">8 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.04); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.84rem; color: #94a3b8;">
+            💡 <strong>Travel Tip:</strong> For shortest turnstile wait times, choose departures before 10:30 AM or after 3:30 PM.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Departures Board & Activity Stream -->
+      <div style="display: grid; grid-template-columns: 1.7fr 1.3fr; gap: 2rem;">
+        
+        <!-- Live Departures Board -->
+        <div style="background: var(--grad-dark-card); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #fff;">
+              Live Turnstile & Boarding Schedule
+            </h3>
+            <a href="ferry.html" style="font-size: 0.82rem; color: #00d2ff; font-weight: 700;">Full Timetable →</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="timetable" style="color: #fff;">
+              <thead>
+                <tr>
+                  <th style="background: rgba(255,255,255,0.06); color: #94a3b8;">Destination</th>
+                  <th style="background: rgba(255,255,255,0.06); color: #94a3b8;">Departs</th>
+                  <th style="background: rgba(255,255,255,0.06); color: #94a3b8;">Gate #</th>
+                  <th style="background: rgba(255,255,255,0.06); color: #94a3b8;">Vessel</th>
+                  <th style="background: rgba(255,255,255,0.06); color: #94a3b8;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Centre Island</strong></td>
+                  <td><span style="color: #00ffaa; font-weight: 800;">In 8 mins</span> (10:15 AM)</td>
+                  <td>Gate 2</td>
+                  <td>Thomas Rennie</td>
+                  <td><span class="status-tag status-boarding">● Boarding Now</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Ward's Island</strong></td>
+                  <td>In 18 mins (10:25 AM)</td>
+                  <td>Gate 1</td>
+                  <td>Sam McBride</td>
+                  <td><span class="status-tag status-ontime">● On Time</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Hanlan's Point</strong></td>
+                  <td>In 32 mins (10:40 AM)</td>
+                  <td>Gate 3</td>
+                  <td>William Inglis</td>
+                  <td><span class="status-tag status-scheduled">● Scheduled</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Centre Island</strong></td>
+                  <td>In 45 mins (10:55 AM)</td>
+                  <td>Gate 2</td>
+                  <td>P.S. Trillium</td>
+                  <td><span class="status-tag status-scheduled">● Scheduled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Port Activity Feed -->
+        <div style="background: var(--grad-dark-card); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 1.25rem;">
+            Real-Time Port Activity Feed
+          </h3>
+
+          <div class="activity-feed-list">
+            <div class="activity-item">
+              <div style="font-size: 1.2rem;">🚢</div>
+              <div style="flex-grow: 1;">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #fff;">M.V. Thomas Rennie Boarding Initiated</div>
+                <div style="font-size: 0.78rem; color: #94a3b8;">Gate 2 open for 10:15 AM Centre Island sailing. 480 passengers cleared turnstiles.</div>
+              </div>
+              <span class="activity-time">2m ago</span>
+            </div>
+
+            <div class="activity-item" style="border-left-color: #00ffaa;">
+              <div style="font-size: 1.2rem;">🏖️</div>
+              <div style="flex-grow: 1;">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #fff;">Water Quality Inspection Passed</div>
+                <div style="font-size: 0.78rem; color: #94a3b8;">Ward's Beach & Hanlan's Beach confirmed Blue Flag pristine swimming conditions.</div>
+              </div>
+              <span class="activity-time">14m ago</span>
+            </div>
+
+            <div class="activity-item" style="border-left-color: #ffb703;">
+              <div style="font-size: 1.2rem;">🚲</div>
+              <div style="flex-grow: 1;">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #fff;">Bike Rental Kiosk Inventory Updated</div>
+                <div style="font-size: 0.78rem; color: #94a3b8;">Quadricycle demand high at Centre Island. 24 family quads currently in rotation.</div>
+              </div>
+              <span class="activity-time">28m ago</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.8rem; display: flex; gap: 0.8rem;">
+            <a href="booking.html" class="btn btn-coral" style="flex: 1; padding: 0.6rem 1rem; font-size: 0.88rem;">Book Ticket Now</a>
+            <a href="contact.html" class="btn btn-secondary" style="flex: 1; padding: 0.6rem 1rem; font-size: 0.88rem; background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.2);">Contact Harbor Master</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Next-generation passenger navigation, smart lake telemetry, and historic Toronto Island crossings.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Dashboard Links</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Vessel Radar</a></li>
+            <li><a href="dashboard.html">Terminal Capacity</a></li>
+            <li><a href="dashboard.html">Weather Telemetry</a></li>
+            <li><a href="ferry.html">Public Timetable</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Passenger Services</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Buy E-Tickets</a></li>
+            <li><a href="parks.html">Park Guide</a></li>
+            <li><a href="recreation.html">Bike Rentals</a></li>
+            <li><a href="events.html">Festival Calendar</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Harbour Control</h4>
+          <div class="footer-contact-item"><span>📡</span><span>VHF Marine Channel 16 / 12</span></div>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>📍</span><span>Jack Layton Pier Operations</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link Systems. AIS Telemetry Stream.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

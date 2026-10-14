@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us & Our Heritage Fleet | Harbour Link</title>
+  <meta name="description" content="Discover the maritime history of Toronto Island ferry transit, our historic passenger fleet, and our vision for zero-emission electric lake crossings.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Heritage Spotlight:</span></div>
+      <span>Celebrating over 190 years of continuous public passenger ferry connection to the Toronto Islands.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/toronto.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">⚓ Maritime Heritage & Future</div>
+        <h1 class="hero-title">About Harbour Link</h1>
+        <p class="hero-subtitle">
+          Dedicated to safeguarding Toronto's iconic lake passage, preserving cherished maritime history, and transitioning to a modern, zero-emission green fleet.
+        </p>
+      </div>
+    </section>
+
+    <!-- Heritage & Story -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-tag">Since 1833</span>
+            <h2 class="section-title">A Living Maritime Legacy</h2>
+            <p class="section-desc" style="margin-bottom: 1.25rem;">
+              Before 1858, the Toronto Islands were actually a sandy peninsula connected directly to the mainland. A fierce April storm severed the peninsula, creating the Eastern Gap and permanently turning the island into an archipelago that could only be reached by boat.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+              From the earliest horse-powered boats to majestic steam-powered side-wheel paddleboats in the Victorian era, the ferry has remained Toronto's most beloved communal voyage. Harbour Link proudly continues this tradition, transporting over 1.4 million passengers annually.
+            </p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="ferry.html" class="btn btn-primary">Explore Our Schedules</a>
+              <a href="contact.html" class="btn btn-secondary">Visit Our Terminal</a>
+            </div>
+          </div>
+          <div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="images/ferry.jpg" alt="Harbour Link ferry cruising the harbour">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Fleet Grid -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Toronto Island Fleet</span>
+          <h2 class="section-title">Meet Our Historic & Modern Vessels</h2>
+          <p class="section-desc">Each vessel in our fleet tells an indelible chapter of Toronto's waterfront identity.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/t2.jpg" alt="PS Trillium steam paddle wheeler">
+              <span class="card-badge">Built 1910</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">P.S. Trillium</h3>
+              <p class="card-text">
+                The grand dame of the Great Lakes. A rare, operational side-wheel steam paddlewheeler capable of carrying 800 passengers with majestic open decks.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">Capacity: 800</span>
+                <span class="meta-chip">Steam Engine</span>
+                <span class="meta-chip">Heritage Flagship</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/ferry.jpg" alt="William Inglis passenger ferry">
+              <span class="card-badge">Built 1935</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">M.V. William Inglis</h3>
+              <p class="card-text">
+                Known for her elegant classic lines and wooden benches, the Inglis has reliably completed hundreds of thousands of crossings to Hanlan's Point.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">Capacity: 900</span>
+                <span class="meta-chip">Dual Decks</span>
+                <span class="meta-chip">Hanlan's Specialist</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/last.jpg" alt="Sam McBride evening ferry">
+              <span class="card-badge">Built 1939</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">M.V. Sam McBride</h3>
+              <p class="card-text">
+                Named after former Toronto Mayor Sam McBride. A true workhorse accommodating up to 1,000 visitors per crossing during warm summer weekends.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">Capacity: 1,000</span>
+                <span class="meta-chip">Centre Island Route</span>
+                <span class="meta-chip">High-Capacity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Green Future & Electric Propulsion -->
+    <section class="section">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #0a2540 0%, #0077b6 100%); border-radius: var(--radius-lg); padding: 4rem 2.5rem; color: #fff; box-shadow: var(--shadow-xl);">
+          <div class="grid-2">
+            <div>
+              <span class="badge-tag" style="background: rgba(16, 185, 129, 0.25); border-color: rgba(16, 185, 129, 0.4); color: #fff;">🌱 Clean Lake Initiative</span>
+              <h2 style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">Our 100% Electric Zero-Emission Fleet Roadmap</h2>
+              <p style="color: rgba(255,255,255,0.88); line-height: 1.7; margin-bottom: 1.5rem;">
+                Harbour Link is actively pioneering full electric propulsion repowering across our fleet. Two brand-new fully electric, high-capacity double-ended vessels are under construction to enter service with zero underwater acoustics disturbance and zero direct greenhouse emissions.
+              </p>
+              <div style="display: flex; gap: 2rem;">
+                <div>
+                  <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold);">0 kg</div>
+                  <div style="font-size: 0.85rem; opacity: 0.8;">Target Direct Emissions by 2028</div>
+                </div>
+                <div>
+                  <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold);">-85%</div>
+                  <div style="font-size: 0.85rem; opacity: 0.8;">Underwater Noise Reduction</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border-radius: var(--radius-md); padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <h4 style="font-weight: 700; margin-bottom: 0.8rem; font-size: 1.15rem;">Maritime Safety Certifications</h4>
+                <p style="font-size: 0.92rem; opacity: 0.85; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Every Harbour Link ferry undergoes rigorous annual inspection by Transport Canada marine surveyors. Our captains and engineers hold advanced Master Mariner credentials with specialized high-traffic commercial harbour endorsements.
+                </p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <span class="meta-chip" style="background: rgba(255,255,255,0.2); color: #fff;">🛡️ Transport Canada Certified</span>
+                  <span class="meta-chip" style="background: rgba(255,255,255,0.2); color: #fff;">🦺 100% SOLAS Lifejackets</span>
+                  <span class="meta-chip" style="background: rgba(255,255,255,0.2); color: #fff;">🩺 Marine First Responders</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Preserving the historic journey and shaping the future of green waterfront transit in Toronto.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Vessels</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">P.S. Trillium (1910)</a></li>
+            <li><a href="about.html">M.V. William Inglis</a></li>
+            <li><a href="about.html">M.V. Sam McBride</a></li>
+            <li><a href="about.html">M.V. Thomas Rennie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="ferry.html">Ferry Schedules</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+            <li><a href="contact.html">Press Inquiries</a></li>
+            <li><a href="contact.html">Careers & Crew</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Port Authority</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>heritage@harbourlink.ca</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. Toronto's official passenger ferry service.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

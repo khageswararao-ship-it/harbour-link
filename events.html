@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toronto Island Events & Festivals | Harbour Link</title>
+  <meta name="description" content="Explore festivals, dragon boat races, outdoor concerts, and seasonal celebrations across Toronto Harbour and the Islands.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Island Events:</span></div>
+      <span>Late-night return ferries run after all major festival and concert evenings until midnight.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link active">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/festival.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">🎉 Celebrations on the Water</div>
+        <h1 class="hero-title">Events & Festivals Calendar</h1>
+        <p class="hero-subtitle">
+          Experience live open-air music, world-class dragon boat regattas, artistic cultural fairs, and twilight waterfront celebrations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Event Filters -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Happenings</span>
+          <h2 class="section-title">Upcoming Harbour & Island Events</h2>
+          <p class="section-desc">Plan your visit around thrilling races, live music performances, and festive outdoor gatherings.</p>
+        </div>
+
+        <div class="schedule-filter-tabs">
+          <button class="filter-tab filter-pill-btn active" data-filter="all">All Events</button>
+          <button class="filter-tab filter-pill-btn" data-filter="festivals">Festivals & Culture</button>
+          <button class="filter-tab filter-pill-btn" data-filter="music">Live Music</button>
+          <button class="filter-tab filter-pill-btn" data-filter="sports">Sports & Races</button>
+          <button class="filter-tab filter-pill-btn" data-filter="family">Family Friendly</button>
+        </div>
+
+        <div class="grid-3" id="events-grid">
+          <!-- Event 1: Dragon Boat -->
+          <article class="card-destination filterable-item" data-category="festivals sports">
+            <div class="card-image-wrap">
+              <img src="images/festival.jpg" alt="Toronto International Dragon Boat Festival">
+              <span class="card-badge">Jun 19 - 21</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Toronto International Dragon Boat Race</h3>
+              <p class="card-text">
+                Over 5,000 athletes from across the globe compete across Centre Island regatta channels alongside vibrant Asian cultural food markets and drumming.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Centre Island Regatta Course</span>
+                <span class="meta-chip">🎟️ Free Admission</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+
+          <!-- Event 2: Sunset Jazz -->
+          <article class="card-destination filterable-item" data-category="music festivals">
+            <div class="card-image-wrap">
+              <img src="images/last.jpg" alt="Sunset jazz series on island waterfront">
+              <span class="card-badge">Every Saturday</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Harbourfront Sunset Jazz & Soul Sessions</h3>
+              <p class="card-text">
+                Unwind on Olympic Island lawns with soulful acoustic guitars, brass bands, and vocalists as the setting sun illuminates the downtown towers.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Olympic Island Amphitheater</span>
+                <span class="meta-chip">⏰ 6:30 PM - 9:30 PM</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+
+          <!-- Event 3: Island 10K Run -->
+          <article class="card-destination filterable-item" data-category="sports">
+            <div class="card-image-wrap">
+              <img src="images/cycling.jpg" alt="Waterfront marathon and 10k run">
+              <span class="card-badge">Jul 12</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Toronto Island Waterfront 10K & 5K</h3>
+              <p class="card-text">
+                One of Ontario's fastest and flattest scenic race courses, traversing all 3 islands without a single vehicular traffic light.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Hanlan's Point to Ward's</span>
+                <span class="meta-chip">🏃 Runner Early Ferries</span>
+              </div>
+              <a href="booking.html?destination=hanlans" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+
+          <!-- Event 4: Centreville Carnival -->
+          <article class="card-destination filterable-item" data-category="family festivals">
+            <div class="card-image-wrap">
+              <img src="images/ce.jpg" alt="Centreville theme park carnival">
+              <span class="card-badge">All Summer Long</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Centreville Family Summer Carnival</h3>
+              <p class="card-text">
+                Magicians, balloon artists, face painting, cotton candy, and extended amusement ride hours celebrate the summer season.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Centre Island Centreville</span>
+                <span class="meta-chip">🎡 Kid-Centric</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+
+          <!-- Event 5: Stargazing Night -->
+          <article class="card-destination filterable-item" data-category="family">
+            <div class="card-image-wrap">
+              <img src="images/toronto.jpg" alt="Stargazing across Toronto skyline">
+              <span class="card-badge">Aug 14 (Perseids)</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Perseid Meteor Shower & Island Dark Sky Night</h3>
+              <p class="card-text">
+                Escape urban street lighting at Hanlan's Point beach. Astronomers guide visitors through telescopes to spot meteors and distant planets.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Hanlan's Point Beach</span>
+                <span class="meta-chip">🔭 Telescopes On-Site</span>
+              </div>
+              <a href="booking.html?destination=hanlans" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+
+          <!-- Event 6: Island Artisans Market -->
+          <article class="card-destination filterable-item" data-category="festivals family">
+            <div class="card-image-wrap">
+              <img src="images/tp.jpg" alt="Artisans fair on Ward's Island">
+              <span class="card-badge">Sundays Bi-Weekly</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Ward's Island Handcrafted Artisans Fair</h3>
+              <p class="card-text">
+                Locally crafted jewelry, watercolor prints of Toronto Harbour, organic honey, herbal teas, and live sidewalk buskers along the community gardens.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📍 Ward's Island Clubhouse Lawns</span>
+                <span class="meta-chip">🎨 40+ Local Makers</span>
+              </div>
+              <a href="booking.html?destination=wards" class="btn btn-secondary">Book Ferry Crossing →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Charters Banner -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-tag">Group Bookings & Charters</span>
+            <h2 class="section-title">Host Your Wedding, Corporate Gala, or School Trip</h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem;">
+              Looking to charter a private passenger ferry or reserve an entire historic island pavilion for your company outing or wedding celebration?
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.8rem; font-size: 0.95rem;">
+              Harbour Link provides custom private vessel charters with catered dining, audio systems, and personalized docking times between 8:00 AM and 1:00 AM.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Inquire About Event Charters →</a>
+          </div>
+          <div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="images/t3.jpg" alt="Island event pavilion and wedding venue">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Celebrating the cultural, musical, and sporting pulse of Toronto's iconic waterfront.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Dragon Boat Regatta</a></li>
+            <li><a href="events.html">Sunset Jazz Series</a></li>
+            <li><a href="events.html">Island 10K Race</a></li>
+            <li><a href="events.html">Artisans Market</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="ferry.html">Ferry Times</a></li>
+            <li><a href="parks.html">Park Facilities</a></li>
+            <li><a href="booking.html">Buy Passes</a></li>
+            <li><a href="about.html">About Harbour Link</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Charters Office</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>events@harbourlink.ca</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. Event dates subject to city permits.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

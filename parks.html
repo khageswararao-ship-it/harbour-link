@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toronto Island Parks & Trails | Harbour Link</title>
+  <meta name="description" content="Discover Toronto Island parklands, scenic nature trails, quiet sandy beaches, botanical gardens, and historic lighthouses with Harbour Link.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Park Update:</span></div>
+      <span>All parklands, restrooms, and beach boardwalks are open today until 11:00 PM.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link active">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/park.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">🌿 600+ Acres of Waterfront Greenery</div>
+        <h1 class="hero-title">Parks, Gardens & Trails</h1>
+        <p class="hero-subtitle">
+          Escape the busy downtown streets to expansive lawns, tranquil weeping willows, sandy beaches, and protected wildlife bird sanctuaries.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Category Filter Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Explore Island Zones</span>
+          <h2 class="section-title">Discover By Interest</h2>
+          <p class="section-desc">Filter through Toronto Island's diverse network of interconnected parks, gardens, and heritage landmarks.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="schedule-filter-tabs">
+          <button class="filter-tab filter-pill-btn active" data-filter="all">All Island Locations</button>
+          <button class="filter-tab filter-pill-btn" data-filter="family">Family & Kids</button>
+          <button class="filter-tab filter-pill-btn" data-filter="beaches">Beaches & Water</button>
+          <button class="filter-tab filter-pill-btn" data-filter="nature">Nature & Trails</button>
+          <button class="filter-tab filter-pill-btn" data-filter="historic">Historic Landmarks</button>
+        </div>
+
+        <!-- Filterable Parks Grid -->
+        <div class="grid-3" id="parks-grid">
+          <!-- Item 1: Centre Island Park -->
+          <article class="card-destination filterable-item" data-category="family nature" id="centre">
+            <div class="card-image-wrap">
+              <img src="images/park.jpg" alt="Centre Island Park Gardens">
+              <span class="card-badge">Centre Island</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Centre Island Botanical Gardens</h3>
+              <p class="card-text">
+                Sprawling manicured flowerbeds, peaceful fountains, reflective ponds, and arched footbridges connecting walking paths across the lagoon.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🌸 Floral Gardens</span>
+                <span class="meta-chip">⛲ Fountains</span>
+                <span class="meta-chip">🚻 Restrooms</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+
+          <!-- Item 2: Ward's Island Beach -->
+          <article class="card-destination filterable-item" data-category="beaches nature" id="wards">
+            <div class="card-image-wrap">
+              <img src="images/tb.jpg" alt="Ward's Island beach and sands">
+              <span class="card-badge">Ward's Island</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Ward's Island Beach & Boardwalk</h3>
+              <p class="card-text">
+                A Blue Flag certified swimming beach looking east across Lake Ontario. Features soft sands, gentle waves, and a scenic wooden boardwalk.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🏊 Blue Flag Beach</span>
+                <span class="meta-chip">🪵 Boardwalk</span>
+                <span class="meta-chip">🏖️ Swim Zone</span>
+              </div>
+              <a href="booking.html?destination=wards" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+
+          <!-- Item 3: Olympic Island Lookout -->
+          <article class="card-destination filterable-item" data-category="nature historic">
+            <div class="card-image-wrap">
+              <img src="images/toronto.jpg" alt="Toronto skyline view from Olympic Island">
+              <span class="card-badge">Olympic Island</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Olympic Island Skyline Vista</h3>
+              <p class="card-text">
+                The world-famous vantage point for unobstructed views of the CN Tower and Toronto skyline across the harbour waters. Unrivalled photography spot.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">📸 Best Skyline Views</span>
+                <span class="meta-chip">🌉 Footbridges</span>
+                <span class="meta-chip">🧺 Picnic Lawns</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+
+          <!-- Item 4: Franklin Children's Garden -->
+          <article class="card-destination filterable-item" data-category="family nature">
+            <div class="card-image-wrap">
+              <img src="images/t3.jpg" alt="Franklin Children's Garden nature trail">
+              <span class="card-badge">Centre Island</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Franklin Children's Garden</h3>
+              <p class="card-text">
+                Inspired by the Franklin the Turtle storybooks, offering interactive storybook sculptures, hands-on pollinator gardens, and nature play zones.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🐢 Kids Storybook Walk</span>
+                <span class="meta-chip">🦋 Butterfly Garden</span>
+                <span class="meta-chip">🌱 Interactive Play</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+
+          <!-- Item 5: Gibraltar Point Lighthouse -->
+          <article class="card-destination filterable-item" data-category="historic nature" id="hanlans">
+            <div class="card-image-wrap">
+              <img src="images/t4.jpg" alt="Gibraltar Point Lighthouse">
+              <span class="card-badge">Hanlan's Point</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Gibraltar Point Lighthouse (1808)</h3>
+              <p class="card-text">
+                The oldest stone lighthouse standing on the Great Lakes. Shrouded in maritime legend and mystery, surrounded by quiet forest nature trails.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🗼 Historic 1808 Site</span>
+                <span class="meta-chip">🌲 Pine Woods</span>
+                <span class="meta-chip">📜 Maritime Lore</span>
+              </div>
+              <a href="booking.html?destination=hanlans" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+
+          <!-- Item 6: Island Lagoon Waterways -->
+          <article class="card-destination filterable-item" data-category="nature">
+            <div class="card-image-wrap">
+              <img src="images/rp.jpg" alt="Quiet island lagoons and bridges">
+              <span class="card-badge">Central Archipelago</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Lagoon Waterways & Bridges</h3>
+              <p class="card-text">
+                Sheltered canal waterways separating the 15 interconnected islands. Home to blue herons, turtles, wild swans, and canoeing pathways.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🛶 Waterway Trails</span>
+                <span class="meta-chip">🦅 Bird Sanctuary</span>
+                <span class="meta-chip">🦆 Wildlife Habitat</span>
+              </div>
+              <a href="booking.html?destination=centre" class="btn btn-secondary">Take Ferry Here →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Island Amenities & Visitor Facilities -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visitor Comfort</span>
+          <h2 class="section-title">Island Amenities & Facilities</h2>
+          <p class="section-desc">Everything you need for a comfortable full-day excursion on the Toronto Islands.</p>
+        </div>
+
+        <div class="grid-4">
+          <div style="background: #fff; padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); text-align: center;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🚻</div>
+            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Public Restrooms</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">12 accessible washrooms and family changing rooms located across all three islands.</p>
+          </div>
+          <div style="background: #fff; padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); text-align: center;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🚰</div>
+            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Drinking Water Fountains</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Free potable water bottle refill stations at all ferry docks, park pavilions, and beaches.</p>
+          </div>
+          <div style="background: #fff; padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); text-align: center;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🛟</div>
+            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Supervised Beaches</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">City of Toronto certified lifeguards stationed at Centre, Ward's, and Hanlan's beaches from 10:30 AM – 7:00 PM.</p>
+          </div>
+          <div style="background: #fff; padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); text-align: center;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.8rem;">🦽</div>
+            <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Paved Boardwalks</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">100% barrier-free smooth paved pathways and accessible boardwalk ramps to beaches.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Discover nature, beaches, and historic waterfronts with Harbour Link ferry transit.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="parks.html#centre">Centre Island Gardens</a></li>
+            <li><a href="parks.html#wards">Ward's Island Beach</a></li>
+            <li><a href="parks.html#hanlans">Hanlan's Point Lighthouse</a></li>
+            <li><a href="ferry.html">Sailing Times</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Activities</h4>
+          <ul class="footer-links">
+            <li><a href="recreation.html#biking">Bike Rentals</a></li>
+            <li><a href="recreation.html#picnics">Picnic Spots</a></li>
+            <li><a href="events.html">Festival Calendar</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>parks@harbourlink.ca</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. Protected Island Conservation Zone.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

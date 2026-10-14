@@ -1,0 +1,222 @@
+/* ==========================================================
+   HARBOUR LINK - RESPONSIVE STYLESHEET
+   Mobile-First & Breakpoint Adjustments (1024px, 768px, 480px)
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   TABLET & SMALL DESKTOP (<= 1024px)
+   ---------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .quick-finder-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-finder-form .btn {
+    grid-column: span 2;
+  }
+}
+
+/* ----------------------------------------------------------
+   MOBILE & TABLET VERTICAL (<= 768px)
+   ---------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 82%;
+    max-width: 360px;
+    height: calc(100vh - var(--header-height));
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    box-shadow: -8px 0 24px rgba(10, 37, 64, 0.15);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-link.active::after {
+    left: 0;
+    transform: none;
+    width: 4px;
+    height: 70%;
+    top: 15%;
+  }
+
+  .nav-actions .btn-book-nav {
+    display: none;
+  }
+
+  .nav-links .mobile-book-btn {
+    display: block !important;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-main {
+    min-height: 75vh;
+    padding-block: 3.5rem 4.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-inline: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .quick-finder-card {
+    margin-top: -2rem;
+    padding: 1.4rem;
+  }
+
+  .quick-finder-form {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-finder-form .btn {
+    grid-column: span 1;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-block: 3.8rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.4rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .booking-steps-bar {
+    flex-direction: column;
+  }
+
+  .booking-step {
+    padding: 0.75rem 1rem;
+    justify-content: flex-start;
+  }
+
+  .booking-content-area {
+    padding: 1.5rem;
+  }
+
+  .passenger-counter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .counter-controls {
+    align-self: flex-end;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   SMALL PHONES (<= 480px)
+   ---------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  .status-bar-content {
+    font-size: 0.76rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  .ticket-card-printable {
+    border-radius: var(--radius-md);
+  }
+}

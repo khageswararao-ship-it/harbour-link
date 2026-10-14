@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Terminal Info | Harbour Link Toronto</title>
+  <meta name="description" content="Get directions to Jack Layton Ferry Terminal, customer service telephone numbers, lost and found inquiries, and answers to frequently asked questions.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Customer Care:</span></div>
+      <span>Terminal inquiry desk open daily 07:00 AM – 09:00 PM at 9 Queens Quay West.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/t4.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">📍 We're Here to Help</div>
+        <h1 class="hero-title">Contact & Visitor Help</h1>
+        <p class="hero-subtitle">
+          Have a question about ferry crossings, accessibility, group charters, or lost items? Reach out to our customer care team or visit the terminal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Details & Interactive Form -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          
+          <!-- Contact Form -->
+          <div style="background: var(--bg-surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-lg);">
+            <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.6rem;">
+              Send an Inquiry
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">
+              Fill out this form and our support agents will respond within 4 business hours.
+            </p>
+
+            <form id="contact-form">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="form-group">
+                  <label class="form-label" for="cf-name">Your Full Name *</label>
+                  <input type="text" class="form-control" id="cf-name" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cf-email">Email Address *</label>
+                  <input type="email" class="form-control" id="cf-email" placeholder="jane@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label class="form-label" for="cf-subject">Topic of Inquiry *</label>
+                <select class="form-control" id="cf-subject">
+                  <option value="tickets">Online Ticketing & E-Passes</option>
+                  <option value="charters">Group Bookings & Private Ferry Charters</option>
+                  <option value="accessibility">Accessibility & Special Assistance</option>
+                  <option value="lostfound">Lost & Found Property</option>
+                  <option value="other">General Inquiries & Feedback</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label class="form-label" for="cf-message">Message *</label>
+                <textarea class="form-control" id="cf-message" rows="5" placeholder="How can we assist you with your island journey?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-coral" style="width: 100%;">
+                Send Message Securely →
+              </button>
+            </form>
+
+            <div id="contact-success-msg" style="display: none; margin-top: 1.5rem; padding: 1.25rem; background: rgba(16, 185, 129, 0.12); border: 1px solid var(--success); border-radius: var(--radius-md); color: #065f46; font-size: 0.95rem;">
+              ✓ <strong>Thank you!</strong> Your message has been received. A representative will contact you shortly. Reference ID: <strong id="inquiry-ref">HL-REQ-2041</strong>.
+            </div>
+          </div>
+
+          <!-- Terminal Information & Map -->
+          <div>
+            <div style="background: var(--bg-alt); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light); margin-bottom: 2rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem;">
+                Jack Layton Ferry Terminal Information
+              </h3>
+
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="display: flex; gap: 1rem;">
+                  <div style="font-size: 1.5rem;">📍</div>
+                  <div>
+                    <strong>Main Terminal Address:</strong><br>
+                    9 Queens Quay West (foot of Bay Street)<br>
+                    Toronto, Ontario M5J 2H3 Canada
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                  <div style="font-size: 1.5rem;">📞</div>
+                  <div>
+                    <strong>Direct Customer Service:</strong><br>
+                    Phone: <a href="tel:+14163928193" style="color: var(--accent-blue); font-weight: 700;">+1 (416) 392-8193</a><br>
+                    Lost & Found: +1 (416) 392-8195
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                  <div style="font-size: 1.5rem;">⏰</div>
+                  <div>
+                    <strong>Operating Hours:</strong><br>
+                    Monday – Sunday: 06:30 AM – 11:45 PM<br>
+                    Ticket Booths: 07:30 AM – 09:00 PM
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Terminal Image Box -->
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+              <img src="images/toronto.jpg" alt="Toronto waterfront and ferry docks">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <section class="section section-alt">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Quick answers to common questions about Toronto Island ferry crossings, bicycles, and island amenities.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          
+          <details style="background: #fff; padding: 1.25rem 1.6rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); cursor: pointer;" open>
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">
+              Are dogs and pets allowed on the ferries and islands?
+            </summary>
+            <p style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Yes! Dogs are welcome on all passenger ferries and on the Toronto Islands at no charge. Dogs must be kept on a standard 2-metre leash at all times, with the exception of the designated off-leash dog area located on Ward's Island.
+            </p>
+          </details>
+
+          <details style="background: #fff; padding: 1.25rem 1.6rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">
+              Do ferry tickets expire if I cannot make my scheduled trip?
+            </summary>
+            <p style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              No! Tickets purchased online through Harbour Link are flexible round-trip passes valid for any sailing on your booked date. If weather disrupts your plans, passes may be redeemed on any subsequent day during the active operating season.
+            </p>
+          </details>
+
+          <details style="background: #fff; padding: 1.25rem 1.6rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">
+              Can I return from a different island terminal than the one I arrived at?
+            </summary>
+            <p style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Yes, absolutely! All three island docks (Centre Island, Ward's Island, and Hanlan's Point) are connected by paved walking and cycling trails. Your return trip is free and valid from any of the three island docks back to Jack Layton Ferry Terminal.
+            </p>
+          </details>
+
+          <details style="background: #fff; padding: 1.25rem 1.6rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--primary);">
+              Are the ferry vessels wheelchair and stroller accessible?
+            </summary>
+            <p style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Yes. Jack Layton Ferry Terminal and all island docks feature level ramp boarding systems. All mainline vessels offer dedicated main deck spaces for wheelchairs, mobility scooters, and strollers.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>We are committed to delivering safe, reliable, and friendly passenger service to Toronto Islands.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">General Inquiries</a></li>
+            <li><a href="contact.html">Lost & Found Service</a></li>
+            <li><a href="ferry.html#accessibility">Mobility & Accessibility</a></li>
+            <li><a href="about.html">Safety Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ferry.html">Schedules</a></li>
+            <li><a href="parks.html">Park Maps</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Hotline</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>info@harbourlink.ca</span></div>
+          <div class="footer-contact-item"><span>📍</span><span>9 Queens Quay West</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Handle interactive contact form submission
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('contact-success-msg');
+    const refCode = document.getElementById('inquiry-ref');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (refCode) {
+        refCode.textContent = 'HL-REQ-' + Math.floor(1000 + Math.random() * 9000);
+      }
+      form.style.display = 'none';
+      if (successMsg) successMsg.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

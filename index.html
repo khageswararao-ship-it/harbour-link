@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harbour Link | Toronto Island Ferry & Waterfront Portal</title>
+  <meta name="description" content="Official Harbour Link portal for Toronto Island ferry schedules, live vessel radar dashboard, online booking, park guides, and waterfront events.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Real-time Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span>Harbour Link Live Status:</span>
+      </div>
+      <span>All 3 Island Terminals operating normally. Next departure in <strong>12 mins</strong>.</span>
+      <span class="status-badge">Lake Ont. Calm • 22°C</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item mobile-book-btn" style="display: none;">
+            <a href="booking.html" class="btn btn-coral" style="width: 100%;">Book Ferry Tickets</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="btn btn-secondary" style="padding: 0.55rem 1.1rem; font-size: 0.88rem; border-color: rgba(0,210,255,0.4); color: #0284c7;">
+          <span>📡</span>
+          <span>Live Radar</span>
+        </a>
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Radiant Gradients -->
+    <section class="hero-main">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge-tag">🌊 The Vibrant Gateway to Toronto Islands</div>
+          <h1 class="hero-title">
+            Experience the Harbour. <br>
+            <span class="glow-text">Connect to the Islands.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Seamless ferry crossings, tranquil beaches, blooming parklands, and unforgettable skyline views. Track live vessels, check real-time gate capacities, and book your tickets in seconds.
+          </p>
+          <div class="hero-cta-group">
+            <a href="booking.html" class="btn btn-coral">Book Ferry Tickets 🎟️</a>
+            <a href="dashboard.html" class="btn btn-primary">Open Live Dashboard ⚡</a>
+            <a href="ferry.html" class="btn btn-glass">View Timetables</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Trip Finder Card -->
+    <div class="container">
+      <div class="quick-finder-card">
+        <form class="quick-finder-form" action="booking.html" method="GET">
+          <div class="form-group">
+            <label class="form-label" for="quick-from">Departing From</label>
+            <select class="form-control" id="quick-from" name="origin">
+              <option value="jack-layton">Jack Layton Ferry Terminal (9 Queens Quay W)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quick-to">Destination Island</label>
+            <select class="form-control" id="quick-to" name="destination">
+              <option value="centre">Centre Island (Family Parks & Pier)</option>
+              <option value="wards">Ward's Island (Beaches & Cafes)</option>
+              <option value="hanlans">Hanlan's Point (Dunes & Sunset)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quick-date">Travel Date</label>
+            <input type="date" class="form-control" id="quick-date" name="date">
+          </div>
+          <button type="submit" class="btn btn-coral" style="height: 48px;">
+            Check Availability →
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Live Dashboard Spotlight Teaser Banner -->
+    <section class="section" style="padding-bottom: 1.5rem;">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #0b132b 0%, #1e3a8a 60%, #0284c7 100%); border-radius: var(--radius-lg); padding: 2.8rem 2.4rem; color: #fff; box-shadow: 0 15px 40px rgba(11, 19, 43, 0.25); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; border: 1px solid rgba(0, 210, 255, 0.3);">
+          <div style="max-width: 680px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0, 255, 170, 0.15); color: #00ffaa; padding: 0.3rem 0.8rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 800; margin-bottom: 0.8rem;">
+              <span class="pulse-dot"></span> LIVE FLEET RADAR & PASSENGER TELEMETRY
+            </div>
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-bottom: 0.6rem;">
+              New Operations Dashboard Is Live
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.85); font-size: 1rem; line-height: 1.6;">
+              Inspect real-time ferry vessel coordinates on our animated AIS radar map, monitor Jack Layton turnstile queue clearance in minutes, check Lake Ontario water temperatures, and review peak hour passenger traffic.
+            </p>
+          </div>
+          <a href="dashboard.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1.05rem; box-shadow: 0 8px 25px rgba(0, 210, 255, 0.4);">
+            Launch Operations Dashboard ⚡
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats Strip -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Island Terminal Docks</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">13m</div>
+              <div class="stat-label">Average Crossing Time</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">1.4M+</div>
+              <div class="stat-label">Annual Island Travelers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Scenic Panoramic Views</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Island Destinations -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Island Destinations</span>
+          <h2 class="section-title">Explore the Toronto Island Archipelago</h2>
+          <p class="section-desc">Each island dock offers a completely unique adventure—from family attractions and botanical gardens to sandy shores and cycling boardwalks.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Card 1: Centre Island -->
+          <article class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/park.jpg" alt="Centre Island Park and gardens">
+              <span class="card-badge">Most Popular</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Centre Island Park</h3>
+              <p class="card-text">
+                The vibrant heart of the islands featuring Centreville amusement park, Franklin Children's Garden, swan boats, and wide picnic meadows.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🎡 Amusement Rides</span>
+                <span class="meta-chip">🍔 Food Courts</span>
+                <span class="meta-chip">🚻 Restrooms</span>
+                <span class="meta-chip">🚲 Bike Paths</span>
+              </div>
+              <a href="parks.html#centre" class="btn btn-secondary">Explore Centre Island →</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Ward's Island -->
+          <article class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/tp.jpg" alt="Ward's Island beach and boardwalk">
+              <span class="card-badge">Quiet & Charming</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Ward's Island & Beach</h3>
+              <p class="card-text">
+                A serene residential oasis with bohemian cottage gardens, quiet eastern beaches, artisanal cafes, and relaxed walking boardwalks.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🏖️ Sandy Beach</span>
+                <span class="meta-chip">☕ Island Cafes</span>
+                <span class="meta-chip">🌿 Nature Trail</span>
+                <span class="meta-chip">🏄 Paddleboarding</span>
+              </div>
+              <a href="parks.html#wards" class="btn btn-secondary">Explore Ward's Island →</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Hanlan's Point -->
+          <article class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/tb.jpg" alt="Hanlan's Point dunes and beach">
+              <span class="card-badge">Sunset & Dunes</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Hanlan's Point</h3>
+              <p class="card-text">
+                Famous for golden hour sunsets, historic Gibraltar Point Lighthouse, expansive western sand dunes, tennis courts, and peaceful trails.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🌅 Sunset Viewpoint</span>
+                <span class="meta-chip">🗼 Historic 1808 Lighthouse</span>
+                <span class="meta-chip">🎾 Sports Courts</span>
+                <span class="meta-chip">🚲 Flat Trails</span>
+              </div>
+              <a href="parks.html#hanlans" class="btn btn-secondary">Explore Hanlan's Point →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Ferry Experience Showcase -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-tag">Smooth & Scenic Transit</span>
+            <h2 class="section-title">Cruising With Harbour Link</h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem;">
+              Our dedicated passenger fleet provides frequent, safe, and comfortable crossings between the downtown waterfront and all three Toronto Island terminals year-round.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+              <li style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                <div style="background: rgba(0, 210, 255, 0.15); color: #0284c7; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">✓</div>
+                <div><strong>Open-Air Panoramic Decks:</strong> Capture iconic 360-degree photographs of the CN Tower and Toronto skyline as you cruise.</div>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                <div style="background: rgba(0, 210, 255, 0.15); color: #0284c7; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">✓</div>
+                <div><strong>Bicycle & Stroller Accessible:</strong> Bring your wheels and strollers at no extra charge on all regular passenger ferries.</div>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                <div style="background: rgba(0, 210, 255, 0.15); color: #0284c7; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">✓</div>
+                <div><strong>Fast Digital Boarding:</strong> Purchase your e-tickets online, skip the terminal queue, and scan right at the turnstiles.</div>
+              </li>
+            </ul>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="ferry.html" class="btn btn-primary">Check Timetable</a>
+              <a href="about.html" class="btn btn-secondary">Our Fleet & Heritage</a>
+            </div>
+          </div>
+          <div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); border: 2px solid rgba(0, 210, 255, 0.3);">
+              <img src="images/ferry.jpg" alt="Harbour Link ferry cruising on Lake Ontario">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recreation & Island Fun -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Active & Leisure</span>
+          <h2 class="section-title">Island Adventures For Everyone</h2>
+          <p class="section-desc">Rent a quad-cycle, kayak through the lagoons, or spread out a picnic blanket beneath ancient willow trees.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/cycling.jpg" alt="Cycling on Toronto island trails">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Bike & Quad Rentals</h3>
+              <p class="card-text">Explore over 15km of car-free paved trails on traditional tandem or multi-passenger family quad cycles.</p>
+              <a href="recreation.html#biking" class="btn btn-secondary">Rental Rates & Info →</a>
+            </div>
+          </div>
+
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/picnic.jpg" alt="Picnic areas by the waterfront">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Picnic & BBQ Areas</h3>
+              <p class="card-text">Over 30 designated picnic shelters with fire pits, shade trees, and scenic water views for family celebrations.</p>
+              <a href="recreation.html#picnics" class="btn btn-secondary">Permits & Sites →</a>
+            </div>
+          </div>
+
+          <div class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/ce.jpg" alt="Centreville Theme Park rides">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Theme Park & Attractions</h3>
+              <p class="card-text">Ride the antique carousel, splash down the log flume, and pet friendly farm animals at Far Enough Farm.</p>
+              <a href="recreation.html#amusements" class="btn btn-secondary">Attraction Tickets →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Banner -->
+    <section class="section">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, rgba(7, 13, 30, 0.88), rgba(37, 99, 235, 0.85)), url('images/festival.jpg'); background-size: cover; background-position: center; border-radius: var(--radius-lg); padding: 4.8rem 2.5rem; color: #fff; text-align: center; box-shadow: var(--shadow-xl); border: 1px solid rgba(0, 210, 255, 0.3);">
+          <span class="badge-tag">Festivals & Events</span>
+          <h2 style="font-family: var(--font-heading); font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 800; margin-bottom: 1.25rem;">Live Island Music, Races & Sunset Cruises</h2>
+          <p style="max-width: 650px; margin-inline: auto; font-size: 1.12rem; color: rgba(255,255,255,0.92); margin-bottom: 2.2rem;">
+            From international dragon boat festivals to acoustic sunset concerts on the pier, discover what's happening on the water this season.
+          </p>
+          <a href="events.html" class="btn btn-coral" style="padding-inline: 2.5rem;">View Events Calendar →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sunset Call To Action -->
+    <section class="section section-alt" style="padding-block: 4.5rem;">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-tag">Instant Digital Ticketing</span>
+            <h2 class="section-title">Ready for Your Island Day?</h2>
+            <p class="section-desc" style="margin-bottom: 1.8rem;">
+              Round-trip ferry tickets are valid for any sailing throughout the season. Buy ahead online, receive your digital pass instantly, and board directly.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="booking.html" class="btn btn-coral">Book Your Ferry Passes Now</a>
+              <a href="dashboard.html" class="btn btn-primary">Check Live Queue Times</a>
+            </div>
+          </div>
+          <div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+              <img src="images/last.jpg" alt="Toronto Harbour sunset from ferry">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Site Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>
+            Your official passenger ferry and visitor gateway to the Toronto Islands. Providing safe, scenic, and sustainable crossings every day.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-pill" aria-label="Facebook">fb</a>
+            <a href="#" class="social-pill" aria-label="Instagram">ig</a>
+            <a href="#" class="social-pill" aria-label="Twitter">tw</a>
+            <a href="#" class="social-pill" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Island Terminals</h4>
+          <ul class="footer-links">
+            <li><a href="ferry.html#centre">Centre Island Terminal</a></li>
+            <li><a href="ferry.html#wards">Ward's Island Terminal</a></li>
+            <li><a href="ferry.html#hanlans">Hanlan's Point Terminal</a></li>
+            <li><a href="dashboard.html">Live Terminal Radar</a></li>
+            <li><a href="ferry.html#accessibility">Accessibility & Boarding</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Activities & Parks</h4>
+          <ul class="footer-links">
+            <li><a href="parks.html">Parks & Nature Trails</a></li>
+            <li><a href="recreation.html#biking">Bicycle & Quad Rentals</a></li>
+            <li><a href="recreation.html#picnics">Picnic Shelters & BBQs</a></li>
+            <li><a href="recreation.html#beaches">Island Beaches & Swimming</a></li>
+            <li><a href="events.html">Festival & Concert Calendar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Contact</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>9 Queens Quay West, Toronto, ON M5J 2H3</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <span>+1 (416) 392-8193</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <span>support@harbourlink.ca</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>⏰</span>
+            <span>Daily: 06:30 AM – 11:45 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link Ferry Services. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="dashboard.html" style="color: #00d2ff;">Live Telemetry</a>
+          <a href="about.html" style="color: inherit;">Privacy Policy</a>
+          <a href="about.html" style="color: inherit;">Terms of Service</a>
+          <a href="contact.html" style="color: inherit;">Customer Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    const quickDate = document.getElementById('quick-date');
+    if (quickDate) {
+      quickDate.value = new Date().toISOString().split('T')[0];
+      quickDate.min = quickDate.value;
+    }
+  </script>
+</body>
+</html>

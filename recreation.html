@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Island Recreation & Rentals | Harbour Link</title>
+  <meta name="description" content="Rent bikes, quads, kayaks, and canoes on the Toronto Islands. Explore amusement rides, disc golf, swimming beaches, and scenic picnic areas.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Recreation Rentals:</span></div>
+      <span>Bike rental booth at Centre Island open daily 10:00 AM – 7:30 PM. Weather permitting.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link active">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/cycling.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">🚲 Active Island Leisure</div>
+        <h1 class="hero-title">Island Recreation & Rentals</h1>
+        <p class="hero-subtitle">
+          Pedal along 15km of car-free trails, paddle tranquil lagoons, test your skill at 18-hole disc golf, or splash at sunny sandy beaches.
+        </p>
+      </div>
+    </section>
+
+    <!-- Rental Pricing Section -->
+    <section class="section" id="biking">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Island Equipment Rentals</span>
+          <h2 class="section-title">Bike & Quad Rental Rates</h2>
+          <p class="section-desc">Located just 200 metres from the Centre Island Ferry Dock. Valid photo ID and security deposit required upon rental.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="fare-card">
+            <div style="font-size: 2.4rem; margin-bottom: 0.5rem;">🚲</div>
+            <div class="fare-category">Standard Cruiser</div>
+            <div class="fare-price">$11.00 <span>/ hr</span></div>
+            <p class="fare-description">Classic single-speed coaster brake bicycle with basket. Comfortable padded saddle.</p>
+            <a href="booking.html" class="btn btn-secondary" style="width: 100%;">Reserve Pass</a>
+          </div>
+
+          <div class="fare-card">
+            <div style="font-size: 2.4rem; margin-bottom: 0.5rem;">🚴‍♂️🚴‍♀️</div>
+            <div class="fare-category">Tandem Bike</div>
+            <div class="fare-price">$18.00 <span>/ hr</span></div>
+            <p class="fare-description">Two-person bicycle built for couples or friends to ride in tandem along the boardwalk.</p>
+            <a href="booking.html" class="btn btn-secondary" style="width: 100%;">Reserve Pass</a>
+          </div>
+
+          <div class="fare-card featured">
+            <span class="fare-badge-featured">Family Favorite</span>
+            <div style="font-size: 2.4rem; margin-bottom: 0.5rem;">🚙</div>
+            <div class="fare-category">2-Person Quadricycle</div>
+            <div class="fare-price">$22.00 <span>/ hr</span></div>
+            <p class="fare-description">Canopy covered 4-wheel pedal quad with front child basket. Fun for parents with small kids.</p>
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Reserve Pass</a>
+          </div>
+
+          <div class="fare-card">
+            <div style="font-size: 2.4rem; margin-bottom: 0.5rem;">🚐</div>
+            <div class="fare-category">4-Person Quadricycle</div>
+            <div class="fare-price">$35.00 <span>/ hr</span></div>
+            <p class="fare-description">Large pedal cart seating 4 adults plus 2 small children upfront. Canopy roof for shade.</p>
+            <a href="booking.html" class="btn btn-secondary" style="width: 100%;">Reserve Pass</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Sports & Attractions -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">More Activities</span>
+          <h2 class="section-title">Water Sports & Island Fun</h2>
+          <p class="section-desc">From kayaking calm lagoon channels to antique amusement rides, endless activities await.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Kayaks -->
+          <article class="card-destination">
+            <div class="card-image-wrap">
+              <img src="images/t2.jpg" alt="Kayaking near Toronto Island boat dock">
+              <span class="card-badge">Water Sports</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Kayaking & SUP Rentals</h3>
+              <p class="card-text">
+                Glide through the protected waterways of Long Pond and Sunfish Cut with single kayaks, double kayaks, or stand-up paddleboards.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🚣 Life Jacket Provided</span>
+                <span class="meta-chip">⏱️ 1-3 Hour Rentals</span>
+                <span class="meta-chip">🌊 Calm Water</span>
+              </div>
+              <a href="booking.html" class="btn btn-secondary">Inquire Rentals →</a>
+            </div>
+          </article>
+
+          <!-- Centreville Theme Park -->
+          <article class="card-destination" id="amusements">
+            <div class="card-image-wrap">
+              <img src="images/ce.jpg" alt="Centreville Amusement rides and attractions">
+              <span class="card-badge">Family Attractions</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Centreville Amusement Park</h3>
+              <p class="card-text">
+                Over 30 kid-friendly rides and attractions including the 1907 antique carousel, miniature steam train, windmill Ferris wheel, and log flume ride.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🎠 30+ Rides</span>
+                <span class="meta-chip">🚂 Mini Railway</span>
+                <span class="meta-chip">🍿 Food & Sweets</span>
+              </div>
+              <a href="booking.html" class="btn btn-secondary">Passes from $35.00 →</a>
+            </div>
+          </article>
+
+          <!-- Picnic & BBQ -->
+          <article class="card-destination" id="picnics">
+            <div class="card-image-wrap">
+              <img src="images/picnic.jpg" alt="Picnic areas under shady trees">
+              <span class="card-badge">Social & Dining</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Picnic Grounds & BBQs</h3>
+              <p class="card-text">
+                Over 30 designated group picnic sites with picnic tables, charcoal barbecue stands, and open green lawns under mature trees.
+              </p>
+              <div class="card-meta-list">
+                <span class="meta-chip">🥩 Charcoal Grills</span>
+                <span class="meta-chip">🪵 Shaded Pavilions</span>
+                <span class="meta-chip">👥 Group Friendly</span>
+              </div>
+              <a href="contact.html" class="btn btn-secondary">Site Reservation Info →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disc Golf & Beaches Spotlight -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="section-tag">Sports & Outdoors</span>
+            <h2 class="section-title">Ward's Island 18-Hole Disc Golf</h2>
+            <p class="section-desc" style="margin-bottom: 1.25rem;">
+              Toronto's premiere disc golf course winds through rolling tree lines, open meadows, and lakeshore edges on Ward's Island.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.8rem; color: var(--text-secondary);">
+              <li>🎯 <strong>18 Championship Quality Holes:</strong> Free to play all year round (bring your own discs or buy discs at the rental hut).</li>
+              <li>🌲 <strong>Scenic Landscape:</strong> Mature willow trees and natural terrain challenges make it exciting for novices and pros alike.</li>
+              <li>🍺 <strong>Adjacent Cafes:</strong> Refresh yourself at the Ward's Island Clubhouse or Rectory Cafe just a 5-minute walk from Hole 18.</li>
+            </ul>
+            <a href="booking.html?destination=wards" class="btn btn-primary">Take Ferry to Ward's Island →</a>
+          </div>
+          <div>
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="images/rp.jpg" alt="Scenic paths and recreation park on Toronto Island">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Connecting you to active recreation, bicycle rentals, water sports, and family memories on Toronto Islands.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Rentals</h4>
+          <ul class="footer-links">
+            <li><a href="recreation.html#biking">Bike & Quad Rentals</a></li>
+            <li><a href="recreation.html">Kayaks & Canoes</a></li>
+            <li><a href="recreation.html#amusements">Centreville Theme Park</a></li>
+            <li><a href="recreation.html#picnics">Picnic Shelters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="ferry.html">Ferry Timetables</a></li>
+            <li><a href="parks.html">Park Maps</a></li>
+            <li><a href="events.html">Festival Schedule</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Support</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>rentals@harbourlink.ca</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. Safe biking & trail safety observed.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

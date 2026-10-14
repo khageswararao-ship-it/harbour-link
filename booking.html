@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Ferry Tickets Online | Harbour Link</title>
+  <meta name="description" content="Reserve round-trip Toronto Island ferry passes online. Instant digital e-tickets with QR code boarding. Fast, secure, and hassle-free.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Status Bar -->
+  <div class="status-bar">
+    <div class="status-bar-content">
+      <div class="status-indicator"><span class="pulse-dot"></span><span>Online Ticketing:</span></div>
+      <span>All digital passes include return passage and are valid for any sailing on your selected date.</span>
+    </div>
+    <button class="status-close-btn" aria-label="Close status alert">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚓</div>
+        <div>Harbour<span>Link</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link nav-dashboard-pill">⚡ Live Dashboard</a></li>
+          <li class="nav-item"><a href="ferry.html" class="nav-link">Ferry Schedules</a></li>
+          <li class="nav-item"><a href="parks.html" class="nav-link">Parks & Trails</a></li>
+          <li class="nav-item"><a href="recreation.html" class="nav-link">Recreation</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn-book-nav active">
+          <span>🎟️</span>
+          <span>Book Tickets</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="hero-page" style="background-image: url('images/hero.jpg');">
+      <div class="container hero-content">
+        <div class="badge-tag">🎟️ Fast & Paperless Boarding</div>
+        <h1 class="hero-title">Book Your Ferry Passes</h1>
+        <p class="hero-subtitle">
+          Secure your round-trip passes in 4 easy steps. Receive your digital QR pass instantly on your screen and via email.
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking Wizard Section -->
+    <section class="section">
+      <div class="container" style="max-width: 960px;">
+        <div class="booking-wizard-wrapper">
+          
+          <!-- Steps Indicator -->
+          <div class="booking-steps-bar">
+            <div class="booking-step active" id="step-nav-1">
+              <span class="step-num">1</span>
+              <span>Trip & Date</span>
+            </div>
+            <div class="booking-step" id="step-nav-2">
+              <span class="step-num">2</span>
+              <span>Passengers</span>
+            </div>
+            <div class="booking-step" id="step-nav-3">
+              <span class="step-num">3</span>
+              <span>Add-Ons</span>
+            </div>
+            <div class="booking-step" id="step-nav-4">
+              <span class="step-num">4</span>
+              <span>Checkout</span>
+            </div>
+          </div>
+
+          <div class="booking-content-area">
+            
+            <!-- STEP 1: Route & Date -->
+            <div class="wizard-panel" id="step-panel-1">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary);">
+                Step 1: Choose Your Destination & Sailing
+              </h3>
+
+              <div style="margin-bottom: 1.5rem; display: flex; gap: 1.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; cursor: pointer;">
+                  <input type="radio" name="tripType" value="roundtrip" checked> Round-Trip (Recommended)
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; cursor: pointer;">
+                  <input type="radio" name="tripType" value="oneway"> One-Way Only
+                </label>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="booking-origin">Origin Terminal</label>
+                  <select class="form-control" id="booking-origin" disabled>
+                    <option>Jack Layton Ferry Terminal (Toronto Downtown)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="booking-route">Destination Island</label>
+                  <select class="form-control" id="booking-route">
+                    <option value="Centre Island">Centre Island (Parks, Attractions & Pier)</option>
+                    <option value="Ward's Island">Ward's Island (Beaches, Boardwalk & Cafes)</option>
+                    <option value="Hanlan's Point">Hanlan's Point (Lighthouse & Sunsets)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="booking-date">Date of Travel</label>
+                  <input type="date" class="form-control" id="booking-date">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="booking-time">Preferred Sailing Time</label>
+                  <select class="form-control" id="booking-time">
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM" selected>10:00 AM</option>
+                    <option value="11:15 AM">11:15 AM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="01:45 PM">01:45 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:15 PM">04:15 PM</option>
+                    <option value="05:30 PM">05:30 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); background: var(--bg-alt); padding: 0.8rem 1rem; border-radius: var(--radius-sm);">
+                ℹ️ <strong>Note:</strong> Tickets are non-timed and flexible! Your selected time is an estimate; your ticket is valid for any scheduled departure on your travel date.
+              </p>
+            </div>
+
+            <!-- STEP 2: Passengers -->
+            <div class="wizard-panel" id="step-panel-2" style="display: none;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary);">
+                Step 2: Select Travelers & Fare Types
+              </h3>
+
+              <div class="passenger-counter-row">
+                <div class="passenger-type-info">
+                  <h4>Adult (Ages 20 – 64)</h4>
+                  <p>$9.11 CAD round-trip</p>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="btn-counter" data-type="adult" data-action="minus">−</button>
+                  <span class="counter-value" id="count-adult">1</span>
+                  <button type="button" class="btn-counter" data-type="adult" data-action="plus">+</button>
+                </div>
+              </div>
+
+              <div class="passenger-counter-row">
+                <div class="passenger-type-info">
+                  <h4>Senior (Ages 65+)</h4>
+                  <p>$5.86 CAD round-trip • Valid photo ID required</p>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="btn-counter" data-type="senior" data-action="minus">−</button>
+                  <span class="counter-value" id="count-senior">0</span>
+                  <button type="button" class="btn-counter" data-type="senior" data-action="plus">+</button>
+                </div>
+              </div>
+
+              <div class="passenger-counter-row">
+                <div class="passenger-type-info">
+                  <h4>Youth (Ages 15 – 19)</h4>
+                  <p>$5.86 CAD round-trip</p>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="btn-counter" data-type="youth" data-action="minus">−</button>
+                  <span class="counter-value" id="count-youth">0</span>
+                  <button type="button" class="btn-counter" data-type="youth" data-action="plus">+</button>
+                </div>
+              </div>
+
+              <div class="passenger-counter-row">
+                <div class="passenger-type-info">
+                  <h4>Child (Ages 2 – 14)</h4>
+                  <p>$4.29 CAD round-trip</p>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="btn-counter" data-type="child" data-action="minus">−</button>
+                  <span class="counter-value" id="count-child">0</span>
+                  <button type="button" class="btn-counter" data-type="child" data-action="plus">+</button>
+                </div>
+              </div>
+
+              <div class="passenger-counter-row">
+                <div class="passenger-type-info">
+                  <h4>Infant (Under 2 Years)</h4>
+                  <p>Free of charge with accompanied guardian</p>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="btn-counter" data-type="infant" data-action="minus">−</button>
+                  <span class="counter-value" id="count-infant">0</span>
+                  <button type="button" class="btn-counter" data-type="infant" data-action="plus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Add-Ons -->
+            <div class="wizard-panel" id="step-panel-3" style="display: none;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary);">
+                Step 3: Enhance Your Island Trip
+              </h3>
+
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <label style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; cursor: pointer; transition: var(--transition-fast);">
+                  <input type="checkbox" class="addon-checkbox" data-addon="centreville" style="margin-top: 0.3rem; transform: scale(1.2);">
+                  <div>
+                    <h4 style="font-weight: 700; font-size: 1.05rem;">Centreville Unlimited Rides Pass (+$35.00/person)</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                      All-day unlimited access to over 30 amusement park rides, the antique carousel, and log flume at Centre Island.
+                    </p>
+                  </div>
+                </label>
+
+                <label style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; cursor: pointer; transition: var(--transition-fast);">
+                  <input type="checkbox" class="addon-checkbox" data-addon="bikerental" style="margin-top: 0.3rem; transform: scale(1.2);">
+                  <div>
+                    <h4 style="font-weight: 700; font-size: 1.05rem;">Island Bicycle 2-Hour Rental Voucher (+$15.00/person)</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                      Pre-book cruiser bicycles with lock and safety helmet included. Redeemable at the Centre Island bicycle rental kiosk.
+                    </p>
+                  </div>
+                </label>
+
+                <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                  <span style="font-size: 1.5rem;">🚲</span>
+                  <div style="font-size: 0.88rem; color: #065f46;">
+                    <strong>Bringing Your Own Bike or Stroller?</strong> Always 100% Free! No surcharge or registration needed.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: Contact & Review -->
+            <div class="wizard-panel" id="step-panel-4" style="display: none;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary);">
+                Step 4: Contact Details & E-Ticket Delivery
+              </h3>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Primary Traveler Full Name *</label>
+                  <input type="text" class="form-control" id="contact-name" placeholder="e.g. Alex Morgan" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address (for Digital Pass) *</label>
+                  <input type="email" class="form-control" id="contact-email" placeholder="e.g. alex@example.ca" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Mobile Phone (for SMS updates) *</label>
+                  <input type="tel" class="form-control" id="contact-phone" placeholder="e.g. +1 (416) 555-0199" required>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-alt); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                🔒 <strong>Instant Confirmation:</strong> This demo environment generates an instant, valid, high-resolution digital e-ticket pass with boarding QR code ready to present at the gate.
+              </div>
+            </div>
+
+            <!-- Order Summary Box (Always Visible) -->
+            <div class="order-summary-box">
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">Trip Fare Summary</div>
+              <div class="summary-line">
+                <span>Selected Passengers:</span>
+                <span id="summary-passengers-count">1 Passenger</span>
+              </div>
+              <div class="summary-line">
+                <span>Ticket Subtotal:</span>
+                <span id="summary-subtotal">$9.11</span>
+              </div>
+              <div class="summary-line">
+                <span>Ontario HST (13%):</span>
+                <span id="summary-tax">$1.18</span>
+              </div>
+              <div class="summary-line summary-total">
+                <span>Estimated Total:</span>
+                <span id="summary-total" style="color: var(--accent-blue);">$10.29 CAD</span>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+              <button type="button" class="btn btn-secondary" id="btn-prev-step" style="display: none;">
+                ← Back
+              </button>
+              <div style="margin-left: auto;">
+                <button type="button" class="btn btn-coral" id="btn-next-step">
+                  Continue to Next Step →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- E-TICKET CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="ticket-modal">
+    <div class="ticket-card-printable">
+      <div class="ticket-header">
+        <div style="font-size: 1.8rem; margin-bottom: 0.3rem;">⚓</div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.2rem;">HARBOUR LINK PASS</h3>
+        <p style="font-size: 0.82rem; opacity: 0.85;">Official Toronto Island Passenger Ferry Boarding Pass</p>
+      </div>
+
+      <div class="ticket-body">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.8rem;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Reference Code</div>
+            <div style="font-weight: 800; font-size: 1.15rem; color: var(--primary);" id="ticket-ref">HL-938210</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Pass Type</div>
+            <div style="font-weight: 700; color: var(--accent-blue);" id="ticket-fare-type">Round-Trip Pass</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 0.8rem;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Lead Passenger</div>
+          <div style="font-weight: 700; font-size: 1.05rem;" id="ticket-name">Traveler Name</div>
+        </div>
+
+        <div style="margin-bottom: 0.8rem;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Route & Direction</div>
+          <div style="font-weight: 700;" id="ticket-route">Jack Layton ➔ Centre Island</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Travel Date & Time</div>
+            <div style="font-weight: 600; font-size: 0.9rem;" id="ticket-date">Today at 10:00 AM</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Quantity</div>
+            <div style="font-weight: 600; font-size: 0.9rem;" id="ticket-passengers">1 Adult</div>
+          </div>
+        </div>
+
+        <div class="ticket-notch-row">
+          <div class="ticket-divider-line"></div>
+        </div>
+
+        <!-- Simulated QR Code -->
+        <div class="ticket-qr-section">
+          <div class="qr-code-box">
+            <div style="font-size: 2.5rem; line-height: 1;">📱</div>
+            <div style="margin-top: 0.3rem;">[ SCAN AT TURNSTILE ]</div>
+            <div style="font-size: 0.65rem; color: var(--text-muted);">VALID ALL DAY</div>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.8rem;">
+            Present barcode or QR code on your mobile phone screen or paper printout at Jack Layton Ferry Terminal turnstiles.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="closeModal('ticket-modal')">Close</button>
+          <button type="button" class="btn btn-primary" style="flex: 1;" id="btn-print-ticket">Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #fff;">
+            <div class="brand-logo-icon">⚓</div>
+            <div>Harbour<span>Link</span></div>
+          </a>
+          <p>Instant e-ticketing and flexible ferry passage for residents and tourists.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Need Assistance?</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Ticket Refund Policy</a></li>
+            <li><a href="contact.html">Lost & Found</a></li>
+            <li><a href="ferry.html#accessibility">Wheelchair Boarding</a></li>
+            <li><a href="about.html">Safety Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Terminals</h4>
+          <ul class="footer-links">
+            <li><a href="ferry.html#centre">Centre Island</a></li>
+            <li><a href="ferry.html#wards">Ward's Island</a></li>
+            <li><a href="ferry.html#hanlans">Hanlan's Point</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-contact-item"><span>📞</span><span>+1 (416) 392-8193</span></div>
+          <div class="footer-contact-item"><span>✉️</span><span>ticketing@harbourlink.ca</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Harbour Link. SSL Encrypted Booking.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="btn-back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
